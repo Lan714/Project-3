@@ -16,9 +16,14 @@ const SignInForm = () => {
 		event.preventDefault()
 		UserAPI.login(userState)
 			.then(({ data: token }) => {
-				localStorage.setItem('token', token)
-				setUserState({ ...userState, name: '', email: '', username: '', password: '' })
-				window.location = '/'
+				if (token) {
+					localStorage.setItem('token', token)
+					setUserState({ ...userState, name: '', email: '', username: '', password: '' })
+					window.location = '/'
+				}
+				else {
+					alert('User unable to login idk why')
+				}
 			})
 			.catch(err => console.error(err))
 	}
