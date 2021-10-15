@@ -13,5 +13,5 @@ const History = new Schema({
   }
 })
 
-module.exports = model('Item', Item)
+module.exports = model('History', History)
 
