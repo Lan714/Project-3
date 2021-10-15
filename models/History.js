@@ -4,14 +4,14 @@ const { model, Schema } = require('mongoose')
 
 
 const History = new Schema({
-  Balance: FLOAT,
-  Profit: FLOAT,
-  Loss: FLOAT,
+  Balance: String,
+  Profit: String,
+  Loss: String,
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User'
   }
 })
 
-module.exports = model('Item', Item)
+module.exports = model('History', History)
 
