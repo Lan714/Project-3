@@ -26,7 +26,7 @@ passport.use(new JwtStrategy({
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
   secretOrKey: process.env.SECRET
 }, ({ id }, cb) => User.findById(id)
-  .populate('items')
+  .populate('crypto')
   .then(user => cb(null, user))
   .catch(err => cb(err))))
 
