@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const UserAPI = {
-	getUser: _ => axios.get('/api/user', {
+	getUser: () => axios.get('/api/user', {
 		headers: {
 			Authorization: `Bearer ${localStorage.getItem('token')}`
 		}
