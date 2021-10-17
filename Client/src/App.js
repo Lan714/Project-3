@@ -3,8 +3,8 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
-// import Auth from './pages/Auth'
-// import Home from './pages/Home'
+import Auth from './Pages/Auth'
+import Home from './Pages/Home'
 
 function App() {
   return (
@@ -12,9 +12,12 @@ function App() {
       <div>
         <Switch>
           <Route exact path='/'>
-            {/* <Home /> */}
+            <Home />
           </Route>
-      
+          <Route path='/signIn'>
+            <Auth />
+          </Route>
+
         </Switch>
       </div>
     </Router>

@@ -2,24 +2,24 @@ const router = require('express').Router()
 const { Crypto, User } = require('../models')
 const passport = require('passport')
 
-router.post('/cryptos', passport.authenticate('jwt'), async function (req, res) {
-  const item = await Item.create({ ...req.body, user: req.user._id })
-  await User.findByIdAndUpdate(req.user._id, { $push: { items: item._id } })
-  res.json(item)
+router.post('/crypto', passport.authenticate('jwt'), async function (req, res) {
+  const crypto = await Crypto.create({ ...req.body, user: req.user._id })
+  await User.findByIdAndUpdate(req.user._id, { $push: { cryptos: crypto._id } })
+  res.json(crypto)
 })
 
 
 
-router.put('/cryptos/:id', passport.authenticate('jwt'), async function (req, res) {
-  await Item.findByIdAndUpdate(req.params.id, { $set: req.body })
+router.put('/crypto/:id', passport.authenticate('jwt'), async function (req, res) {
+  await Crypto.findByIdAndUpdate(req.params.id, { $set: req.body })
   res.sendStatus(200)
 })
 
 
 
-router.delete('/cryptos/:id', passport.authenticate('jwt'), async function (req, res) {
-  await Item.findByIdAndDelete(req.params.id)
-  await User.findByIdAndUpdate(req.user._id, { $pull: { items: req.params.id } })
+router.delete('/crypto/:id', passport.authenticate('jwt'), async function (req, res) {
+  await Crypto.findByIdAndDelete(req.params.id)
+  await User.findByIdAndUpdate(req.user._id, { $pull: { cryptos: req.params.id } })
   res.sendStatus(200)
 })
 
