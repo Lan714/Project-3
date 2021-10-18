@@ -16,11 +16,6 @@ router.post('/crypto', passport.authenticate('jwt'), async function (req, res) {
     }))
 })
 
-// router.post('/crypto', passport.authenticate('jwt'), async function (res, req) {
-//   Crypto.create({...req.body, user: req.user._id})
-// })
-
-
 router.put('/crypto/:id', passport.authenticate('jwt'), async function (req, res) {
   await Crypto.findByIdAndUpdate(req.params.id, req.body)
     .then(data => console.log(data))
