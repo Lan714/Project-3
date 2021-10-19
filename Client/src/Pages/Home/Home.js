@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react'
 import UserAPI from '../../utils/UserAPI'
-import Button from '@mui/material/Button'
-
+import Button from 'react-bootstrap/Button'
 const Home = () => {
 	const handleSignOut = () => {
 		localStorage.removeItem('token')
-		window.location = '/signIn'
+		window.location = '/signin'
 	}
 
 	return (

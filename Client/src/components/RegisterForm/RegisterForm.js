@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import UserAPI from '../../utils/UserAPI'
-import Button from '@mui/material/Button'
-import Box from '@mui/material/Box'
-import TextField from '@mui/material/TextField'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+
+
 
 const RegisterForm = () => {
 	const [userState, setUserState] = useState({
@@ -26,28 +27,52 @@ const RegisterForm = () => {
 	}
 
 	return (
-		<>
-			<Box
-				component="form"
-				sx={{
-					'& > :not(style)': { m: 1, width: '25ch' },
-					backgroundColor: 'gray'
-				}}
-				noValidate
-				autoComplete="off"
-			>
-				Register Part
-
-				<TextField id="filled-basic" label="Filled" variant="filled" />
-
-				<TextField id="standard-basic" label="name" name="name" variant="standard" value={userState.name} onChange={handleInputChange} />
-				<TextField id="standard-basic" label="email" name="email" variant="standard" value={userState.email} onChange={handleInputChange} />
-				<TextField id="standard-basic" label="username" name="username" variant="standard" value={userState.username} onChange={handleInputChange} />
-				<TextField id="standard-basic" label="password" name="password" variant="standard" value={userState.password} onChange={handleInputChange} />
-				<Button type="submit" onClick={handleRegisterUser}>Register</Button>
-			</Box>
-		</>
+		<Form>
+			<Form.Group className="mb-3" controlId="name">
+				<Form.Label>Name</Form.Label>
+				<Form.Control
+					type="text"
+					placeholder="Enter your name"
+					name="name"
+					value={userState.name}
+					onChange={handleInputChange} />
+			</Form.Group>
+			<Form.Group className="mb-3" controlId="email">
+				<Form.Label>Email</Form.Label>
+				<Form.Control
+					type="email"
+					placeholder="Enter your email"
+					name="email"
+					value={userState.email}
+					onChange={handleInputChange} />
+			</Form.Group>
+			<Form.Group className="mb-3" controlId="username">
+				<Form.Label>Username</Form.Label>
+				<Form.Control
+					type="text"
+					placeholder="Enter your username"
+					name="username"
+					value={userState.username}
+					onChange={handleInputChange} />
+			</Form.Group>
+			<Form.Group className="mb-3" controlId="password">
+				<Form.Label>Password</Form.Label>
+				<Form.Control
+					type="password"
+					placeholder="Enter your password"
+					name="password"
+					value={userState.password}
+					onChange={handleInputChange} />
+			</Form.Group>
+			<Button
+				variant="primary"
+				type="submit"
+				onClick={handleRegisterUser} >
+				Register
+			</Button>
+		</Form>
 	)
 }
 
 export default RegisterForm
+
