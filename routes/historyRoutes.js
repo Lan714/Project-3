@@ -2,6 +2,14 @@ const router = require('express').Router()
 const { History, User } = require('../models')
 const passport = require('passport')
 
+router.get('/history/max', passport.authenticate('jwt'), (req, res) => {
+	let result = []
+	for (let i = 0; i < req.user.historys.length; i++) {
+		result.push(req.user.historys[i].weekNumber)
+	}
+	res.json(result)
+})
+
 router.post('/history', passport.authenticate('jwt'), async function (req, res) {
 	const history = await History.create({ ...req.body, user: req.user._id })
 	await User.findByIdAndUpdate(req.user._id, { $push: { historys: history._id } })
