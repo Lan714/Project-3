@@ -5,10 +5,10 @@ import {
 } from 'react-router-dom'
 import Auth from './Pages/Auth'
 import Home from './Pages/Home'
+import Header from './components/Header'
 import History from './Pages/History'
 import Leaderboard from './Pages/Leaderboard';
 import AboutUs from './Pages/AboutUs';
-
 
 function App() {
   return (
@@ -16,7 +16,8 @@ function App() {
       <div>
         <Switch>
           <Route exact path='/'>
-            <Home />
+          <Home />
+            <Header />
           </Route>
           <Route path='/signIn'>
             <Auth />
