@@ -1,0 +1,37 @@
+.footer {
+  background: #152F4F;
+  color: rgb(121, 117, 117);
+  .links {
+    ul {
+      list-style-type: none;
+    }
+    li a {
+      color: rgba(255, 255, 255, .1);
+      transition: color .2s;
+      &:hover {
+        text-decoration: none;
+        color: #4180CB;
+      }
+    }
+  }
+  .about-company {
+    i {
+      font-size: 25px;
+    }
+    a {
+      color: rgba(255, 255, 255, .1);
+      transition: color .2s;
+      &:hover {
+        color: #4180CB
+      }
+    }
+  }
+  .Contact {
+    i {
+      font-size: 18px;
+    }
+  }
+  .copyright p {
+    border-top: 1px solid rgba(255, 255, 255, .1);
+  }
+}
