@@ -8,7 +8,14 @@ const History = new Schema({
       crypto_name: String,
       dollar_value: String
     }],
-    profit: String,
+    transaction: [{
+      date: Date,
+      crypto_name: String,
+      side: String,
+      price: String,
+      amount: String,
+      total: String
+    }]
   }],
   user: {
     type: Schema.Types.ObjectId,
