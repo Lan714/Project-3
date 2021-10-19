@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom'
 import Auth from './Pages/Auth'
 import Home from './Pages/Home'
+import Header from './components/Header'
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <div>
         <Switch>
           <Route exact path='/'>
-            <Home />
+          <Home />
+            <Header />
           </Route>
           <Route path='/signIn'>
             <Auth />
