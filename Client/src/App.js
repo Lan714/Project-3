@@ -8,6 +8,7 @@ import Home from './Pages/Home'
 import History from './Pages/History'
 import Leaderboard from './Pages/Leaderboard';
 import AboutUs from './Pages/AboutUs';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -23,10 +24,10 @@ function App() {
           <Route path='/history'>
             <History />
           </Route>
-          <Route path='/leaderboard'>
+          <Route path='/Leaderboard'>
             <Leaderboard />
           </Route>
-          <Route path='/aboutus'>
+          <Route path='/AboutUs'>
             <AboutUs />
           </Route>
         </Switch>
