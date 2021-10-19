@@ -4,10 +4,11 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 
 const DropdownWeeknumForm = ({
-	weekNum
+	weekNum,
+	getRankings
 }) => {
 	return (
-		<Dropdown.Item href={"/"}>{weekNum}</Dropdown.Item>
+		<Dropdown.Item onClick={() => getRankings(weekNum)}>{weekNum}</Dropdown.Item>
 	)
 }
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import HistoryElem from '../../components/HistoryElem'
 import DropdownWeeknumForm from '../../components/DropdownWeekNumForm'
+import LeaderBoardTableForm from '../../components/LeaderBoardTableForm/LeaderBoardTableForm'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -16,6 +17,9 @@ const Leaderboard = () => {
 		historys: []
 	})
 
+	const getRankings = (weekNum) => {
+		console.log(weekNum)
+	}
 
 	const handleSignOut = () => {
 		localStorage.removeItem('token')
@@ -40,14 +44,16 @@ const Leaderboard = () => {
 							</Dropdown.Toggle>
 							<Dropdown.Menu>
 								{
-									historyState.historys.map((weekNumber) => (<DropdownWeeknumForm weekNum={weekNumber} />))
+									historyState.historys.map((weekNumber) => (<DropdownWeeknumForm
+										weekNum={weekNumber}
+										getRankings={getRankings} />))
 								}
 							</Dropdown.Menu>
 						</Dropdown>
 					</Col>
-					<Col sm={6}>
-						
-					</Col>
+				</Row>
+				<Row>
+					<LeaderBoardTableForm />
 				</Row>
 			</Container>
 			<Button onClick={handleSignOut}>Logout</Button>
