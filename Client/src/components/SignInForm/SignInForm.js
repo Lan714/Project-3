@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import UserAPI from '../../utils/UserAPI'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import Jumbotron from 'react-bootstrap/Jumbotron';
 import Toast from 'react-bootstrap/Toast';
 import Container from 'react-bootstrap/Container';
 
