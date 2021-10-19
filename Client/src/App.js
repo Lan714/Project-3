@@ -8,6 +8,7 @@ import Home from './Pages/Home'
 import History from './Pages/History'
 import Leaderboard from './Pages/Leaderboard';
 import AboutUs from './Pages/AboutUs';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
