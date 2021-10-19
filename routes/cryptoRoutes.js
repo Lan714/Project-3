@@ -5,13 +5,21 @@ const passport = require('passport')
 router.post('/crypto', passport.authenticate('jwt'), async function (req, res) {
   const crypto = await Crypto.create({ ...req.body, user: req.user._id })
   await User.findByIdAndUpdate(req.user._id, { $push: { cryptos: crypto._id } })
-  res.json(crypto)
+    .then(data => res.json({
+      user: data,
+      crypto: crypto,
+      message: "Success!"
+    }))
+    .catch(err => res.json({
+      err: err,
+      message: "unable to post crypto"
+    }))
 })
 
-
-
 router.put('/crypto/:id', passport.authenticate('jwt'), async function (req, res) {
-  await Crypto.findByIdAndUpdate(req.params.id, { $set: req.body })
+  await Crypto.findByIdAndUpdate(req.params.id, req.body)
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
   res.sendStatus(200)
 })
 
