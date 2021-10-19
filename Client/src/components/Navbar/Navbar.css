@@ -1,0 +1,93 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 5rem;
+  /* change to 5rem later */
+  height: 100vh;
+  background-color: #23232e;
+  font-size: 20px;
+  transition: all 600ms ease;
+}
+
+.navLi {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.navLi li {
+  /* position: relative; */
+  width: 100%;
+  height: 60px;
+  border: 1px solid aqua;
+  /* can take out border later */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .navTab {
+  width: 100%;
+} */
+
+/* .navTab:last-child {
+  margin-top: auto;
+} */
+
+.navLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  color: white;
+  /*transition: all 0.5s ease;
+  */
+  filter: grayscale(100%) opacity(0.7);
+}
+
+.navTab:hover {
+  filter: grayscale(0%) opacity(1);
+  background: #141418;
+}
+
+.navbar span {
+  display: none;
+  margin-left: 1rem;
+}
+
+.navbar:hover {
+  width: 16rem;
+}
+
+.navbar:hover span {
+  display: block;
+}
+
+.navTog {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+  /* color: #3993CD; */
+  background: #141418;
+}
+
+.togIcon {
+  transform: rotate(0deg);
+  transition: all 600ms ease;
+}
+
+.navbar:hover .togIcon {
+  margin-left: 1rem;
+  transform: rotate(-540deg);
+}

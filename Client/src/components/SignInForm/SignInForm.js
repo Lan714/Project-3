@@ -56,8 +56,7 @@ const SignInForm = () => {
 				Sign In
 			</Button>
 		</Form>
-
+	)
 }
-
 
 export default SignInForm
