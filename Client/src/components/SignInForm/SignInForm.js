@@ -2,6 +2,8 @@ import { useState } from 'react'
 import UserAPI from '../../utils/UserAPI'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import './SignIn.css'
+
 
 const SignInForm = () => {
 	const [userState, setUserState] = useState({
@@ -54,7 +56,6 @@ const SignInForm = () => {
 				Sign In
 			</Button>
 		</Form>
-	)
 
 }
 
