@@ -6,6 +6,21 @@ const HistoryAPI = {
 			Authorization: `Bearer ${localStorage.getItem('token')}`
 		}
 	}),
+
+	getAllHistory: () => axios.get('api/leaderboard'),
+
+	getWeekNum: () => axios.get('api/history/max', {
+		headers: {
+			Authorization: `Bearer ${localStorage.getItem('token')}`
+		}
+	}),
+
+	getHistory: () => axios.get('api/history', {
+		headers: {
+			Authorization: `Bearer ${localStorage.getItem('token')}`
+		}
+	}),
+
 	update: (id, updates) => axios.put(`/api/history/${id}`, updates, {
 		headers: {
 			Authorization: `Bearer ${localStorage.getItem('token')}`
