@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 const Home = () => {
 	const handleSignOut = () => {
 		localStorage.removeItem('token')
-		window.location = '/signIn'
+		window.location = '/signin'
 	}
 
 	return (
