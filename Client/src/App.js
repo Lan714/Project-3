@@ -23,10 +23,10 @@ function App() {
           <Route path='/history'>
             <History />
           </Route>
-          <Route path='/leaderboard'>
+          <Route path='/Leaderboard'>
             <Leaderboard />
           </Route>
-          <Route path='/aboutus'>
+          <Route path='/AboutUs'>
             <AboutUs />
           </Route>
         </Switch>
