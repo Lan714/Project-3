@@ -16,6 +16,7 @@ const History = new Schema({
     total: String
   }],
   profit: Number,
+  username: String,
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User'

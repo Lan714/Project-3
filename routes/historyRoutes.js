@@ -11,7 +11,7 @@ router.get('/history/max', passport.authenticate('jwt'), (req, res) => {
 })
 
 router.post('/history', passport.authenticate('jwt'), async function (req, res) {
-	const history = await History.create({ ...req.body, user: req.user._id })
+	const history = await History.create({ ...req.body, username: req.user.username, user: req.user._id })
 	await User.findByIdAndUpdate(req.user._id, { $push: { historys: history._id } })
 		.then(data => res.json({
 			user: data,
@@ -22,6 +22,8 @@ router.post('/history', passport.authenticate('jwt'), async function (req, res) 
 			err: err,
 			message: "unable to post history"
 		}))
+
+	console.log(req.user.username)
 })
 
 router.put('/history/:id', passport.authenticate('jwt'), async function (req, res) {

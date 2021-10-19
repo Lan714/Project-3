@@ -7,7 +7,7 @@ router.get('/leaderboard', (req, res) => {
 		.then(historys => {
 			let result = []
 			for (let i = 0; i < historys.length; i++) {
-				let username = historys[i].user
+				let username = historys[i].username
 				let profit = historys[i].profit
 				result.push({ username, profit })
 			}
@@ -17,7 +17,6 @@ router.get('/leaderboard', (req, res) => {
 			})
 
 			res.json(result)
-			
 		})
 })
 
