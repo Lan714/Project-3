@@ -3,9 +3,9 @@ const { model, Schema } = require('mongoose')
 const User = new Schema({
   name: String,
   email: String,
-  crypto: [{
+  historys: [{
     type: Schema.Types.ObjectId,
-    ref: 'Crypto'
+    ref: 'History'
   }]
 })
 

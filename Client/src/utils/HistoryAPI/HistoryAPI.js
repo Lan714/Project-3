@@ -6,6 +6,25 @@ const HistoryAPI = {
 			Authorization: `Bearer ${localStorage.getItem('token')}`
 		}
 	}),
+
+	getRankingforSpecificWeek: (num) => axios.get('api/leaderboard', {
+		headers: {
+			number: num
+		}
+	}),
+
+	getWeekNum: () => axios.get('api/history/max', {
+		headers: {
+			Authorization: `Bearer ${localStorage.getItem('token')}`
+		}
+	}),
+
+	getHistory: () => axios.get('api/history', {
+		headers: {
+			Authorization: `Bearer ${localStorage.getItem('token')}`
+		}
+	}),
+
 	update: (id, updates) => axios.put(`/api/history/${id}`, updates, {
 		headers: {
 			Authorization: `Bearer ${localStorage.getItem('token')}`
