@@ -3,6 +3,12 @@ import { faAngleDoubleRight, faHome, faUsers, faTrophy, faSignOutAlt, faWallet }
 import './Navbar.css'
 
 const Navbar = () => {
+
+  const handleSignOut = () => {
+    localStorage.removeItem('token')
+    window.location = '/signin'
+  }
+
   return (
     <div className="navbar">
 
@@ -16,7 +22,7 @@ const Navbar = () => {
         </li>
 
         <li className="navTab">
-          <a href="#" className="navLink">
+          <a href="/" className="navLink">
             <FontAwesomeIcon icon={faHome} className="icon" />
             <span>Home</span>
           </a>
@@ -30,21 +36,21 @@ const Navbar = () => {
         </li>
 
         <li className="navTab">
-          <a href="#" className="navLink">
+          <a href="/leaderboard" className="navLink">
             <FontAwesomeIcon icon={faTrophy} className="icon" />
             <span>Leaderboard</span>
           </a>
         </li>
 
         <li className="navTab">
-          <a href="#" className="navLink">
+          <a href="/aboutus" className="navLink">
             <FontAwesomeIcon icon={faUsers} className="icon" />
             <span>About Us</span>
           </a>
         </li>
 
         <li className="navTab">
-          <a href="#" className="navLink">
+          <a onClick={handleSignOut} className="navLink">
             <FontAwesomeIcon icon={faSignOutAlt} className="icon" />
             <span>Log out</span>
           </a>
