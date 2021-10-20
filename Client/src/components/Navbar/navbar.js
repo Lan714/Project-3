@@ -6,7 +6,7 @@ import './Navbar.css'
 const Navbar = () => {
 
   const history = useHistory()
-=======
+
 
   const handleSignOut = () => {
     localStorage.removeItem('token')
@@ -28,6 +28,7 @@ const Navbar = () => {
 
         <li className="navTab">
 
+
           <div onClick={() => history.push('/')} className="navLink">
 
           <a href="/" className="navLink">
@@ -40,7 +41,9 @@ const Navbar = () => {
         <li className="navTab">
           <div onClick={() => history.push('/history')} className="navLink">
             <FontAwesomeIcon icon={faWallet} className="icon" />
+
             <span className="navSpan">History</span>
+
           </div>
         </li>
 
@@ -49,6 +52,7 @@ const Navbar = () => {
           <div onClick={() => history.push('/Leaderboard')} className="navLink">
 
           <a href="/leaderboard" className="navLink">
+
 
             <FontAwesomeIcon icon={faTrophy} className="icon" />
             <span className="navSpan">Leaderboard</span>
@@ -61,6 +65,7 @@ const Navbar = () => {
 
           <a href="/aboutus" className="navLink">
 
+
             <FontAwesomeIcon icon={faUsers} className="icon" />
             <span className="navSpan">About Us</span>
           </div>
@@ -71,6 +76,7 @@ const Navbar = () => {
           <div onClick={() => history.push('/signIn')} className="navLink">
 
           <a onClick={handleSignOut} className="navLink">
+
 
             <FontAwesomeIcon icon={faSignOutAlt} className="icon" />
             <span className="navSpan">Log out</span>

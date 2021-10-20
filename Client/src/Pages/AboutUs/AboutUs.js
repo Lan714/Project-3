@@ -5,18 +5,12 @@ import Navbar from '../../components/Navbar'
 import './AboutUs.css'
 
 const AboutUs = () => {
-	const handleSignOut = () => {
-		localStorage.removeItem('token')
-		window.location = '/signIn'
-	}
-
 	return (
 		<div className="aboutUsPg">
 			<Navbar />
 			<div className="pgContent">
 				About Us Page
-			<Button onClick={handleSignOut}>Logout</Button>
-			</div>	
+			</div>
 		</div>
 	)
 }

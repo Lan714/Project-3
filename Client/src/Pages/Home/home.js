@@ -5,11 +5,6 @@ import Navbar from '../../components/Navbar'
 import './Home.css'
 
 const Home = () => {
-	const handleSignOut = () => {
-		localStorage.removeItem('token')
-		window.location = '/signin'
-	}
-
 	return (
 		<div className="homePg">
 			<Navbar />
