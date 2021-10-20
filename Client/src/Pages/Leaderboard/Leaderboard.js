@@ -72,7 +72,7 @@ const Leaderboard = () => {
 									{
 										historyState.historys.map((weekNumber) => (<DropdownWeeknumForm
 											weekNum={weekNumber}
-											getRankings={getRankings} />))
+											getfunction={getRankings} />))
 									}
 								</Dropdown.Menu>
 							</Dropdown>
