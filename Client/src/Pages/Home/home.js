@@ -15,6 +15,7 @@ const Home = () => {
 			<Navbar />
 			<div className="pgContent">
 				Hello world
+				<Button onClick={handleSignOut}>Logout</Button>
 			</div>
 		</div>
 	)
