@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import HistoryElem from '../../components/HistoryElem'
 import DropdownWeeknumForm from '../../components/DropdownWeekNumForm'
-import LeaderBoardTableForm from '../../components/LeaderBoardTableForm/LeaderBoardTableForm'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -17,8 +16,8 @@ import Table from 'rc-table'
 const columns = [
 	{
 		title: '#',
-		dataIndex: 'Rank',
-		key: 'Rank',
+		dataIndex: 'rank',
+		key: 'rank',
 		width: 100,
 	},
 	{
@@ -82,9 +81,6 @@ const Leaderboard = () => {
 								</Dropdown.Menu>
 							</Dropdown>
 						</Col>
-					</Row>
-					<Row>
-						<LeaderBoardTableForm />
 					</Row>
 					<Row>
 						<Table columns={columns} data={rankingState} />
