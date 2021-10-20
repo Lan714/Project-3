@@ -5,10 +5,10 @@ import DropdownButton from 'react-bootstrap/DropdownButton'
 
 const DropdownWeeknumForm = ({
 	weekNum,
-	getRankings
+	getfunction
 }) => {
 	return (
-		<Dropdown.Item onClick={() => getRankings(weekNum)}>{weekNum}</Dropdown.Item>
+		<Dropdown.Item onClick={() => getfunction(weekNum)}>{weekNum}</Dropdown.Item>
 	)
 }
 
