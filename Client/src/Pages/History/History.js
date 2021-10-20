@@ -7,7 +7,7 @@ import './History.css'
 
 const History = () => {
 	return (
-		<div className="transactionsPg">
+		<div className="historyPg">
 			<Navbar />
 			<div className="pgContent">
 				History Page
