@@ -4,7 +4,16 @@ import {useHistory} from 'react-router-dom'
 import './Navbar.css'
 
 const Navbar = () => {
+
   const history = useHistory()
+=======
+
+  const handleSignOut = () => {
+    localStorage.removeItem('token')
+    window.location = '/signin'
+  }
+
+
   return (
     <div className="sideNavbar">
 
@@ -18,7 +27,11 @@ const Navbar = () => {
         </li>
 
         <li className="navTab">
+
           <div onClick={() => history.push('/')} className="navLink">
+
+          <a href="/" className="navLink">
+
             <FontAwesomeIcon icon={faHome} className="icon" />
             <span className="navSpan">Home</span>
           </div>
@@ -32,21 +45,33 @@ const Navbar = () => {
         </li>
 
         <li className="navTab">
+
           <div onClick={() => history.push('/Leaderboard')} className="navLink">
+
+          <a href="/leaderboard" className="navLink">
+
             <FontAwesomeIcon icon={faTrophy} className="icon" />
             <span className="navSpan">Leaderboard</span>
           </div>
         </li>
 
         <li className="navTab">
+
           <div onClick={() => history.push('/Aboutus')} className="navLink">
+
+          <a href="/aboutus" className="navLink">
+
             <FontAwesomeIcon icon={faUsers} className="icon" />
             <span className="navSpan">About Us</span>
           </div>
         </li>
 
         <li className="navTab">
+
           <div onClick={() => history.push('/signIn')} className="navLink">
+
+          <a onClick={handleSignOut} className="navLink">
+
             <FontAwesomeIcon icon={faSignOutAlt} className="icon" />
             <span className="navSpan">Log out</span>
           </div>
