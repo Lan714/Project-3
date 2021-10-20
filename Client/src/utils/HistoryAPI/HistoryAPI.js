@@ -7,11 +7,8 @@ const HistoryAPI = {
 		}
 	}),
 
-	getRankingforSpecificWeek: (num) => axios.get('api/leaderboard', {
-		headers: {
-			number: num
-		}
-	}),
+	getRankingforSpecificWeek: (num) => axios.get(`api/leaderboard/${num}`
+	),
 
 	getWeekNum: () => axios.get('api/history/max', {
 		headers: {
