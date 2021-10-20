@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleRight, faHome, faUsers, faTrophy, faSignOutAlt, faWallet } from '@fortawesome/free-solid-svg-icons'
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
         <li className="navTog">
           <section className="navLink">
             <span className="navSpan" >Project 3</span>
-            <FontAwesomeIcon icon={faAngleDoubleRight} style={{color: "#3993CD"}} id="togIcon" />
+            <FontAwesomeIcon icon={faAngleDoubleRight} style={{ color: "#3993CD" }} id="togIcon" />
           </section>
         </li>
 
@@ -30,9 +30,6 @@ const Navbar = () => {
 
 
           <div onClick={() => history.push('/')} className="navLink">
-
-          <a href="/" className="navLink">
-
             <FontAwesomeIcon icon={faHome} className="icon" />
             <span className="navSpan">Home</span>
           </div>
@@ -51,7 +48,6 @@ const Navbar = () => {
 
           <div onClick={() => history.push('/Leaderboard')} className="navLink">
 
-          <a href="/leaderboard" className="navLink">
 
 
             <FontAwesomeIcon icon={faTrophy} className="icon" />
@@ -63,7 +59,6 @@ const Navbar = () => {
 
           <div onClick={() => history.push('/Aboutus')} className="navLink">
 
-          <a href="/aboutus" className="navLink">
 
 
             <FontAwesomeIcon icon={faUsers} className="icon" />
@@ -73,10 +68,7 @@ const Navbar = () => {
 
         <li className="navTab">
 
-          <div onClick={() => history.push('/signIn')} className="navLink">
-
-          <a onClick={handleSignOut} className="navLink">
-
+          <div onClick={handleSignOut} className="navLink">
 
             <FontAwesomeIcon icon={faSignOutAlt} className="icon" />
             <span className="navSpan">Log out</span>
