@@ -23,9 +23,9 @@ const Navbar = () => {
         </li>
 
         <li className="navTab">
-          <a href="/" className="navLink">
-            <FontAwesomeIcon icon={faHome} className="icon" />
-            <span className="navSpan">Home</span>
+          <a href="/leaderboard" className="navLink">
+            <FontAwesomeIcon icon={faTrophy} className="icon" />
+            <span className="navSpan">Leaderboard</span>
           </div>
         </li>
 
