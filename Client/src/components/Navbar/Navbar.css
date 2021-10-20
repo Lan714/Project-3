@@ -6,7 +6,7 @@
   height: 100vh;
   background-color: #23232e;
   font-size: 20px;
-  overflow: scroll;
+  /* overflow: scroll; */
   /*topby2layers*/
   z-index: 2;
   transition: all 0.6s ease;
