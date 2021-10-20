@@ -27,7 +27,7 @@ const Navbar = () => {
         <li className="navTab">
           <div onClick={() => history.push('/history')} className="navLink">
             <FontAwesomeIcon icon={faWallet} className="icon" />
-            <span className="navSpan">History</span>
+            <span className="navSpan">Transactions</span>
           </div>
         </li>
 
