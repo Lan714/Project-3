@@ -16,7 +16,16 @@ router.get('/leaderboard/:num', (req, res) => {
 				return b.profit - a.profit
 			})
 
-			res.json(result)
+			let result1 = []
+
+			for (let i = 0; i < result.length; i++) {
+				let rank = i + 1
+				let username = result[i].username
+				let profit = result[i].profit
+				result1.push({ rank, username, profit })
+			}
+
+			res.json(result1)
 		})
 })
 
