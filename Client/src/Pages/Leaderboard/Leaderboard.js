@@ -1,13 +1,9 @@
 import { useState, useEffect } from 'react'
-import HistoryElem from '../../components/HistoryElem'
 import DropdownWeeknumForm from '../../components/DropdownWeekNumForm'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Card from 'react-bootstrap/Card'
 import HistoryAPI from '../../utils/HistoryAPI'
-import UserAPI from '../../utils/UserAPI'
-import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Navbar from '../../components/Navbar'
 import './Leaderboard.css'
@@ -76,7 +72,7 @@ const Leaderboard = () => {
 									{
 										historyState.historys.map((weekNumber) => (<DropdownWeeknumForm
 											weekNum={weekNumber}
-											getRankings={getRankings} />))
+											getfunction={getRankings} />))
 									}
 								</Dropdown.Menu>
 							</Dropdown>
