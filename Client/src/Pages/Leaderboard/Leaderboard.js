@@ -10,6 +10,8 @@ import HistoryAPI from '../../utils/HistoryAPI'
 import UserAPI from '../../utils/UserAPI'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
+import Navbar from '../../components/Navbar'
+import './Leaderboard.css'
 
 const Leaderboard = () => {
 	const [historyState, setHistoryState] = useState({
@@ -34,8 +36,10 @@ const Leaderboard = () => {
 
 
 	return (
-		<>
-			<Container className="cont">
+		<div className="homePg">
+			<Navbar />
+			<div className="pgContent">
+				<Container className="cont">
 				<Row>
 					<Col sm={6}>
 						<Dropdown>
@@ -57,7 +61,8 @@ const Leaderboard = () => {
 				</Row>
 			</Container>
 			<Button onClick={handleSignOut}>Logout</Button>
-		</>
+			</div>
+		</div>
 	)
 }
 
