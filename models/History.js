@@ -2,18 +2,18 @@ const { model, Schema } = require('mongoose')
 
 const History = new Schema({
   weekNumber: Number,
-  cash_balance: String,
+  cash_balance: Number,
   crypto_balace: [{
     crypto_name: String,
-    dollar_value: String
+    dollar_value: Number
   }],
   transaction: [{
     date: String,
     crypto_name: String,
     side: String,
-    price: String,
-    amount: String,
-    total: String
+    price: Number,
+    amount: Number,
+    total: Number
   }],
   profit: Number,
   username: String,

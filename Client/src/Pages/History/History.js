@@ -9,14 +9,47 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import OverviewForm from '../../components/OverviewForm'
 import DropdownWeeknumForm from '../../components/DropdownWeekNumForm'
-
+import Table from 'rc-table'
 import './History.css'
+
+const columns = [
+	{
+		title: 'Overview',
+		dataIndex: 'Overview',
+		key: 'Overview',
+		width: 100,
+	},
+	{
+		title: 'Cash Balance',
+		dataIndex: 'cash_balance',
+		key: 'cash_balance',
+		width: 100,
+	},
+	{
+		title: 'Coin Balance',
+		dataIndex: 'coin_balance',
+		key: 'coin_balance',
+		width: 200,
+	},
+	{
+		title: 'Profit',
+		dataIndex: 'profit',
+		key: 'profit',
+		width: 200,
+	}
+];
 
 const History = () => {
 	const [historyState, setHistoryState] = useState({
-		weekNumber: '',
 		historys: []
 	})
+
+	const [overviewState, setOverviewState] = useState({
+		cash_balance: '',
+		coin_balance: '',
+		profit: ''
+	})
+
 
 	const getHistory = (weekNum) => {
 		HistoryAPI.getHistory(weekNum)
@@ -51,7 +84,7 @@ const History = () => {
 						</Dropdown>
 					</Row>
 					<Row>
-						<OverviewForm />
+						<Table columns={columns} data={ } />
 					</Row>
 					<Row>
 						History Table
