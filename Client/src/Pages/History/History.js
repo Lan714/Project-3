@@ -6,17 +6,11 @@ import Navbar from '../../components/Navbar'
 import './History.css'
 
 const History = () => {
-	const handleSignOut = () => {
-		localStorage.removeItem('token')
-		window.location = '/signIn'
-	}
-
 	return (
 		<div className="historyPg">
 			<Navbar />
 			<div className="pgContent">
 				History Page
-			<Button onClick={handleSignOut}>Logout</Button>
 			</div>	
 		</div>
 	)

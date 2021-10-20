@@ -2,8 +2,8 @@ const router = require('express').Router()
 const { History, User } = require('../models')
 const passport = require('passport')
 
-router.get('/leaderboard', (req, res) => {
-	History.find({ weekNumber: req.headers.number })
+router.get('/leaderboard/:num', (req, res) => {
+	History.find({ weekNumber: req.params.num })
 		.then(historys => {
 			let result = []
 			for (let i = 0; i < historys.length; i++) {
@@ -16,7 +16,16 @@ router.get('/leaderboard', (req, res) => {
 				return b.profit - a.profit
 			})
 
-			res.json(result)
+			let result1 = []
+
+			for (let i = 0; i < result.length; i++) {
+				let rank = i + 1
+				let username = result[i].username
+				let profit = result[i].profit
+				result1.push({ rank, username, profit })
+			}
+
+			res.json(result1)
 		})
 })
 
